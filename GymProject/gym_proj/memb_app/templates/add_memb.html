@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Members</title>
+    {% load static %}
+    <link  rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link  rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-color: rgb(59, 48, 122);">
+    <header>
+        {% load static %}
+        <nav class="navbar1" style="border-style: solid; border-color: azure;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/all_memb">View all members</a></li>
+                <li><a href="/add_memb">Add a member</a></li>
+                <li><a href="/remove_memb">Remove a member</a></li>
+                <li><a href="/filter_memb">filter member details</a></li>
+                <div class="adminbutton"><li><a href="/admin">Admin</a></li></div>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Add member!</h1>
+        <hr>
+        <form action="/add_memb/" method="POST">
+            {% csrf_token %}
+            <label for="entry_id">Entry ID</label><br>
+            <input type="number" id="entry_id" name="entry_id" value="{{ entry_id }}"><br>
+            <label for="first_name">First Name</label><br>
+            <input type="text" id="first_name" name="first_name" value="{{ first_name }}"><br>
+            <label for="last_name">Last Name</label><br>
+            <input type="text" id="last_name" name="last_name" value="{{ last_name }}"><br>
+            <label for="role">Role</label><br>
+            <input type="number" id="role" name="role" value="{{ role }}"><br>
+            <label for="phone">Contact Number</label><br>
+            <input type="number" id="phone" name="phone" value="{{ phone }}"><br>
+            <label for="fees_plan">Fees plan</label><br>
+            <input type="number" id="fees_plan" name="fees_plan" value="{{ fees_plan }}"><br>
+            <hr>
+        </form>
+        <div class="main">
+            <a type="submit" id="btn">Submit</a>
+        </div>
+    </div>
+            
+        </form>
+
+
+
+</body>
+
+</html>

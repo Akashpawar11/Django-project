@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Members</title>
+    {% load static %}
+    <link  rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link  rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body style="background-color: rgb(115, 51, 131);">
+    <header>
+        {% load static %}
+        <nav class="navbar1"  style="border-style: solid; border-color: azure;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/all_memb">View all members</a></li>
+                <li><a href="/add_memb">Add a member</a></li>
+                <li><a href="/remove_memb">Remove a member</a></li>
+                <li><a href="/filter_memb">filter member details</a></li>
+                <div class="adminbutton"><li><a href="/admin">Admin</a></li></div>
+            </ul>
+        </nav>
+      </header>
+    <div class="container">
+          <h1 style="align-content: center;">All Members Details!</h1>
+      <hr>
+    <table class="table table-bordered table-dark">
+    <thead>
+        <tr align="center">
+        <th class="bg-danger">Entry ID</th>
+        <th class="bg-danger">First Name</th>
+        <th class="bg-danger">Last Name</th>
+        <th class="bg-danger">Role</th>
+        <th class="bg-danger">Phone Number</th>
+        <th class="bg-danger">Fees Plan</th>
+        <th class="bg-danger">Duration</th>
+        <th class="bg-danger">Fees</th>
+        </tr>
+    </thead>
+         {% for mem in memb %}
+    <tbody>
+        <tr>
+        <td align="center">{{mem.entry_id}}</td>
+        <td align="center">{{mem.first_name}}</td>
+        <td align="center">{{mem.last_name}}</td>
+        <td align="center">{{mem.role}}</td>
+        <td align="center">{{mem.phone}}</td>
+        <td align="center">{{mem.fees_plan.plan}}</td>
+        <td align="center">{{mem.fees_plan.duration}}</td>
+        <td align="center">{{mem.fees_plan.fees}}</td>
+        </tr>
+    </tbody>
+         {% endfor %}
+    </table>
+
+    </div>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

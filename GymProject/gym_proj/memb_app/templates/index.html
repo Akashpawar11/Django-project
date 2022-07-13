@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym management system</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-color: rgb(115, 51, 131);">
+  <header>
+    {% load static %}
+    <nav class="navbar1"  style="border-style: solid; border-color: azure;">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="/all_memb">View all members</a></li>
+            <li><a href="/add_memb">Add a member</a></li>
+            <li><a href="/remove_memb">Remove a member</a></li>
+            <li><a href="/filter_memb">filter member details</a></li>
+            <li><a href="/contact_us">Contact us</a></li>
+            <div class="adminbutton"><li><a href="/admin">Admin</a></li></div>
+        </ul>
+    </nav>
+  </header>
+  <div
+  class="bg-image card shadow-1-strong"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp'); margin-left: 1em; margin-right: 1em; border-radius: 25px;">
+  <div class="card-body text-white" style="padding: 2em; margin-left: 1em;">
+    <h5 class="card-title">All available Facilities</h5>
+    <p class="card-text">
+      Click this button to see all available Facilities.
+    </p>
+    <a href="/facilities" class="btn btn-outline-light">Facilities</a>
+  </div>
+</div>
+<br>
+<div
+class="bg-image card shadow-1-strong"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp'); margin-left: 1em; margin-right: 1em; border-radius: 25px;">
+<div class="card-body text-white" style="padding: 2em; margin-left: 1em;">
+  <h5 class="card-title">All available Facilities</h5>
+  <p class="card-text">
+    Click this button to see all available Facilities.
+  </p>
+  <a href="#!" class="btn btn-outline-light">Facilities</a>
+</div>
+</div>
+  
+ 
+  {% load static %}
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

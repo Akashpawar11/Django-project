@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Member</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-color: rgb(219, 165, 49);">
+    <header>
+        {% load static %}
+        <nav class="navbar1" style="border-style: solid; border-color: azure;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/all_memb">View all members</a></li>
+                <li><a href="/add_memb">Add a member</a></li>
+                <li><a href="/remove_memb">Remove a member</a></li>
+                <li><a href="/filter_memb">filter member details</a></li>
+                <div class="adminbutton">
+                    <li><a href="/admin">Admin</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Filter Member Details!</h1>
+        <hr>
+        <form action="/filter_memb/" method="POST">
+            {% csrf_token %}
+            <label for="name">Member First/Last Name</label><br>
+            <input type="text" id="name" name="name" value="{{ name }}"><br>
+            <label for="entry_id">Entry ID</label><br>
+            <input type="number" id="entry_id" name="entry_id" value="{{ entry_id }}"><br>
+            <label for="role">Role</label><br>
+            <input type="text" id="role" name="role" value="{{ role }}"><br>
+            <hr>
+            
+        </form>
+        <div class="main">
+            <a type="submit" id="btn">Submit</a>
+        </div>
+
+
+    </div>
+
+    {% load static %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+</body>
+
+</html>

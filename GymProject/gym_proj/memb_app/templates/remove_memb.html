@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Member</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-color: rgb(8, 111, 151);">
+    <header>
+        {% load static %}
+        <nav class="navbar1"  style="border-style: solid; border-color: azure;">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/all_memb">View all members</a></li>
+                <li><a href="/add_memb">Add a member</a></li>
+                <li><a href="/remove_memb">Remove a member</a></li>
+                <li><a href="/filter_memb">filter member details</a></li>
+                <div class="adminbutton"><li><a href="/admin">Admin</a></li></div>
+            </ul>
+        </nav>
+      </header>
+    <div class="container">
+        <h1>Remove a member!</h1>
+        <hr>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Member To Be Removed
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% for mem in memb %}
+              <li><a class="dropdown-item" href="/remove_memb/{{mem.id}}">{{mem.first_name}} {{mem.last_name}}</a></li>
+                {% endfor %}
+            </ul>
+          </div>
+          
+    </div>
+    {% load static %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+</body>
+
+</html>
